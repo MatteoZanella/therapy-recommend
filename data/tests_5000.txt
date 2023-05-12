@@ -1,0 +1,4 @@
+PatientID	Patient Condition
+Pa0		Pa0Co11
+Pa1		Pa1Co0
+Pa2		Pa2Co8

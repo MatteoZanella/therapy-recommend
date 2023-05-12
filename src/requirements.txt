@@ -1,0 +1,6 @@
+BeautifulSoup4
+requests
+names
+python-dateutil
+numpy
+# nltk
