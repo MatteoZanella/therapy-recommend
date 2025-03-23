@@ -1,46 +1,46 @@
-# Therapy Recommendation
-Study on a recommendation system to suggest possible therapies for sick patients, based on the therapies suggested for similar cases.
-The interesting part of this problem is the three-way relationship of patient-condition-therapy: you can suggest a therapy for a certain patient based on his similarity with other patients and on the similarity of his condition with other patients' conditions.
+# Therapy Recommendation [![Read the Report](https://img.shields.io/badge/Read%20the%20Report-PDF-blue)](./doc/data_mining_report.pdf)
+Study on a recommendation system to suggest possible therapies for sick patients, based on the therapies suggested for similar cases. The interesting aspect of this problem lies in the three-way relationship of patient-condition-therapy: you can suggest a therapy for a particular patient based on their similarity to other patients and the similarity of their condition to others.
 
-The algorithm runs on a generated dataset instead of relying on real data.
+The algorithm operates on a generated synthetic dataset rather than relying on real data.
 
-## Project Structure
-* [`bin`](./bin): The file `performances.txt` contains the results of the evaluation
-* [`data`](./data): Contains the cases to be analyzed
-* [`doc`](./doc): Contains the documentation [report](./doc/data_mining_report.pdf)
-* [`results`](./results): The files `{casesFileName}_sol.txt` contain the solutions of the cases
-* [`src`](./src): Contain the recommender system and the dataset generator source code
+## 📂 Project Structure
+* [`bin`](./bin): Contains the `performances.txt` file with evaluation results.
+* [`data`](./data): Holds the cases to be analyzed.
+* [`doc`](./doc): Includes the [report](./doc/data_mining_report.pdf).
+* [`results`](./results): Contains the solution files in the format `{casesFileName}_sol.txt` for each case.
+* [`src`](./src): Contains the recommender system and dataset generator source code.
 
+## 🚀 How to Use
 
-## Libraries Installation
+### Libraries Installation
 
 Open the terminal in the `./src` folder and follow these instructions:
 
 1. (Optional) Create a Virtual Environment:
-```sh
-python3 -m venv ./venv
-```
-  - On Unix:
-      ```sh
-      source ./venv/bin/activate
-      ```
-  - On Windows:
-      ```powershell
-      .\venv\Scripts\Activate
-      ```
+    ```sh
+    python -m venv ./venv
+    ```
+      - On Unix:
+          ```sh
+          source ./venv/bin/activate
+          ```
+      - On Windows:
+          ```powershell
+          .\venv\Scripts\Activate
+          ```
 
 2. Install the required libraries:
-```sh
-python3 -m pip3 install -r requirements.txt
-```
+    ```sh
+    python -m pip3 install -r requirements.txt
+    ```
 
-## Dataset Creation
+### Dataset Creation
 To run the algorithm, it is necessary to generate the dataset.
 ```sh
-python3 ./create_dataset.py
+python ./create_dataset.py
 ```
 
-## Recommender System
+### Run the Recommender System
 The recommender system is run with the command `python ./recommender.py [datasetPath] [OPTIONS]`
 - `datasetPath`  
   **Required.** Position of the JSON file with data.
@@ -57,24 +57,24 @@ The recommender system is run with the command `python ./recommender.py [dataset
 - `-h`, `--help`  
   Show this help message and exit.
 
-Example of usage:
-```sh
-python3 ./recommender.py ../data/datasetB.json  --cases ../data/datasetB_cases.json
+Examples:
+```bash
+python ./recommender.py ../data/datasetB.json  --cases ../data/datasetB_cases.json
 ```
 
 Run the recommender on a single case:
-```sh
-python3 ./recommender.py [datasetPath] --patient patientId --patient-cond patientCondition
+```bash
+python ./recommender.py [datasetPath] --patient patientId --patient-cond patientCondition
 ```
 
 Run the recommender on a file of cases
-```sh
-python3 ./recommender.py [datasetPath] --cases casesPath
+```bash
+python ./recommender.py [datasetPath] --cases casesPath
 ```
 
 Run the evaluation mode (hyperparameters are set in the script):
-```sh
-python3 ./recommender.py [datasetPath] --evaluate
+```bash
+python ./recommender.py [datasetPath] --evaluate
 ```
 
 
